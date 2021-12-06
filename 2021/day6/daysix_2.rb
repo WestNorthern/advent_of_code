@@ -1,6 +1,6 @@
 a = File.readlines('daysix_input.txt')
 
-input = a[0].split(",").map { |age| age.to_i }
+input = a[0].split(",").map(&:to_i )
 
 fish_counts = {
   0 => input.filter { |f| f == 0 }.count,
@@ -15,16 +15,16 @@ fish_counts = {
 }
 
 256.times do |i|
-  zeroFish = fish_counts[0];
+  zero_fish = fish_counts[0];
 	fish_counts[0] = fish_counts[1];
 	fish_counts[1] = fish_counts[2];
 	fish_counts[2] = fish_counts[3];
 	fish_counts[3] = fish_counts[4];
 	fish_counts[4] = fish_counts[5];
 	fish_counts[5] = fish_counts[6];
-	fish_counts[6] = fish_counts[7] + zeroFish;
+	fish_counts[6] = fish_counts[7] + zero_fish;
 	fish_counts[7] = fish_counts[8];
-	fish_counts[8] = zeroFish;
+	fish_counts[8] = zero_fish;
 end
 
 p fish_counts.map { |item| item[1] }.sum
