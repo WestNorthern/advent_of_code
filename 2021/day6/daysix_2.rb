@@ -16,15 +16,15 @@ fish_counts = {
 
 256.times do |i|
   zero_fish = fish_counts[0];
-	fish_counts[0] = fish_counts[1];
-	fish_counts[1] = fish_counts[2];
-	fish_counts[2] = fish_counts[3];
-	fish_counts[3] = fish_counts[4];
-	fish_counts[4] = fish_counts[5];
-	fish_counts[5] = fish_counts[6];
-	fish_counts[6] = fish_counts[7] + zero_fish;
-	fish_counts[7] = fish_counts[8];
-	fish_counts[8] = zero_fish;
+  fish_counts[0] = fish_counts[1];
+  fish_counts[1] = fish_counts[2];
+  fish_counts[2] = fish_counts[3];
+  fish_counts[3] = fish_counts[4];
+  fish_counts[4] = fish_counts[5];
+  fish_counts[5] = fish_counts[6];
+  fish_counts[6] = fish_counts[7] + zero_fish;
+  fish_counts[7] = fish_counts[8];
+  fish_counts[8] = zero_fish;
 end
 
 p fish_counts.map { |item| item[1] }.sum
